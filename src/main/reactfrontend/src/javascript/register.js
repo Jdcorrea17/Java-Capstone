@@ -6,12 +6,12 @@ const headers = {
     'Content-Type':'application/json'
 }
 
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'http://localhost:8080'
 
 
 const handleSubmit = async (e) =>{
     e.preventDefault()
-
+    alert("Hello")
     let bodyObj = {
         username: registerUsername.value,
         password: registerPassword.value
