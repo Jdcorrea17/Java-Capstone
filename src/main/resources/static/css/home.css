@@ -132,15 +132,17 @@ h2{
     font-family: Serif;
 
 }
-#form-input{
+.form-input{
     width: 150px;
     height: 20px;
     margin-bottom: 10px;
     font-family: Serif;
     font-size: medium;
+
 }
 .sub-button{
     background-color: navy;
+    color: white;
     width: 150px;
     margin: 0px;
     font-size: large;
@@ -148,6 +150,12 @@ h2{
     font-family: Serif;
     text-align: center;
     justify-content: center;
+    align-content: center;
+    justify-self: center;
+    justify-items: center;
+    text-align-all: center;
+    align-self: center;
+    align-items: center;
 
 }
 .sold-home{
@@ -156,4 +164,7 @@ h2{
 .pages{
     display: flex;
     flex-direction: row;
+}
+.add-to{
+    text-align: center;
 }

@@ -20,14 +20,14 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @PostMapping("/register.html")
+    @PostMapping("/register")
     public List<String> addUser(@RequestBody UserDto userDto){
         String passHash = passwordEncoder.encode(userDto.getPassword());
         userDto.setPassword(passHash);
         return userService.addUser(userDto);
     }
 
-    @PostMapping("/login,html")
+    @PostMapping("/login")
     public List<String> userLogin(@RequestBody UserDto userDto){
         return userService.userLogin(userDto);
     }

@@ -5,10 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <link rel="stylesheet" href="./css/home.css" type="text/css">
+
     <div class="logo">
         <h1 class="h1-logo">Real Estate Engineering</h1>
         <div class="img-logo">
@@ -29,7 +30,7 @@
 
     <div class="form-home">
         <h2>Add New Houses</h2>
-        <form>
+        <form id="submit-form">
             <div class="flex-form">
                 <div class="input-home">
                     <label for="form-img" class="p-tags">Image URl:</label>
@@ -59,20 +60,21 @@
                 <div class="input-home">
                     <label for="form-available" class="p-tags">Availability:</label>
                     <input placeholder="Availability(double)" type="boolean" id="form-available"
-                    class="form-input"></input>
+                    class="form-input">
                 </div>
             </div>
-            <div class="sub-button">
+            <div class="add-to">
                 <button type="submit" class="sub-button">Add To Page</button>
             </div>
         </form>
     </div>
     <br>
-
+    <br>
     <div class="available-home">
         <h2 class="ava-color">Available</h2>
-        <div class="home-container">
+        <div id="home-container">
             <section id="home-body"></section>
+            <textarea id="home-input"> </textarea>
         </div>
     </div>
     <br>
@@ -94,13 +96,13 @@
                 <input placeholder="Mortgage" type="text" id="cal-loan" class="form-input">
             </div>
 
-            <div class="sub-button">
+            <div>
                 <button type="button" class="sub-button">Calculate</button>
             </div>
         </form>
     </div>
 
-<script src="./javascript/home.js" type="application/javascript"></script>
+<script src="javascript/home.js" type="application/javascript"></script>
 
 </body>
 </html>
