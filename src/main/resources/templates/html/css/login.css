@@ -1,0 +1,77 @@
+*{
+    background-color: lightgrey;
+}
+h1{
+    margin: 5px;
+    margin-bottom: 25px;
+    color: navy;
+    width: 120px;
+    font-family: Serif;
+    text-align: center;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 220px;
+    max-width: 500px;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 250px;
+    margin-bottom: auto;
+    font-family: Serif;
+    justify-content: center;
+}
+.sub-button{
+    background-color: navy;
+    color: white;
+    width: 150px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right:auto;
+    font-size: large;
+    font-weight: bolder;
+    font-family: Serif;
+    /*text-align: center;*/
+}
+.p-tags{
+    color: Navy;
+    font-weight: bolder;
+    font-size: large;
+    margin-right: 3px;
+}
+.register-but{
+    /*border-style: solid;*/
+    width: 164px;
+    margin: auto;
+    font-size: large;
+    font-weight: bolder;
+    color: navy;
+    font-family: Serif;
+    text-align: center;
+}
+#login-username{
+    width: 150px;
+    height: 20px;
+    margin-bottom: 5px;
+    font-family: Serif;
+    font-size: medium;
+}
+#login-password{
+    width: 150px;
+    height: 20px;
+    margin-bottom: 10px;
+    font-family: Serif;
+    font-size: medium;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+.pass-form{
+    margin-right: 10px;
+}

@@ -1,4 +1,4 @@
-package com.capstone.project.entities;
+package com.capstone.project;
 
 import java.util.Scanner;
 

@@ -1,5 +1,7 @@
 package com.capstone.project.entities;
 
+import com.capstone.project.dtos.HomeDto;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,26 +13,36 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Homes")
-public class Homes {
+public class Home {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    @Column(columnDefinition = "text")
+    private String img;
+    @Column
     private String address;
-    private int rooms;
+    @Column
+    private int bedrooms;
+    @Column
     private int bathrooms;
+    @Column
     private String squareFt;
+    @Column
     private double price;
+    @Column
     private boolean availability;
 
-    Homes(String address, int rooms, int bathrooms, String squareFt, double price, boolean availability){
+    Home(String img, String address, int bedrooms, int bathrooms, String squareFt, double price, boolean availability) {
+        this.img = img;
         this.address = address;
-        this.rooms = rooms;
+        this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
         this.squareFt = squareFt;
         this.price = price;
         this.availability = availability;
     }
+    public String getImg(){return img;}
 
     public String getAddress() {
         return address;
@@ -40,12 +52,12 @@ public class Homes {
         this.address = address;
     }
 
-    public int getRooms() {
-        return rooms;
+    public int getBedrooms() {
+        return bedrooms;
     }
 
-    public void setRooms(int rooms) {
-        this.rooms = rooms;
+    public void setBedrooms(int rooms) {
+        this.bedrooms = rooms;
     }
 
     public int getBathrooms() {
@@ -79,4 +91,24 @@ public class Homes {
     public void setAvailability(boolean availability) {
         this.availability = availability;
     }
+    public Home(HomeDto homeDto){
+        if(homeDto.getId() != null){
+            this.id = homeDto.getId();
+        }
+        this.img = homeDto.getImg();
+        if(homeDto.getAddress() != null){
+            this.address = homeDto.getAddress();
+        }
+            this.bedrooms = homeDto.getBedrooms();
+            this.bathrooms = homeDto.getBathrooms();
+
+        if(homeDto.getSquareFt() != null){
+            this.squareFt = homeDto.getSquareFt();
+        }
+            this.price = homeDto.getPrice();
+            this.availability = homeDto.isAvailability();
+    }
+    @ManyToOne
+    @JsonBackReference
+    private User user;
 }

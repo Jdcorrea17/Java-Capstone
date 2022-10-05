@@ -1,0 +1,87 @@
+*{
+    background-color: lightgrey;
+}
+h1{
+    color: navy;
+    width: 200px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.reg-form{
+    border-style: solid;
+    border-color: black;
+    width: 400px;
+    height: 220px;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 250px;
+    margin-bottom: auto;
+    color: white;
+    font-weight: bolder;
+    font-family: Serif;
+}
+.sub-button{
+    background-color: navy;
+    width: 150px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right:auto;
+    font-size: large;
+    font-weight: bolder;
+    font-family: Serif;
+    justify-content: center;
+    color: white;
+}
+.login-but{
+    /*border-style: solid;*/
+    width: 80px;
+    margin: auto;
+    font-size: large;
+    font-weight: bolder;
+    color: navy;
+    font-family: Serif;
+}
+.home-but{
+    /*border-style: solid;*/
+    width: 80px;
+    margin: auto;
+    font-size: large;
+    font-weight: bolder;
+    color: navy;
+}
+.pages{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+#register-username{
+    width: 150px;
+    height: 20px;
+    margin-bottom: 5px;
+    margin-right: 3px;
+    font-family: Serif;
+    font-size: medium;
+
+}
+#register-password{
+    width: 150px;
+    height: 20px;
+    margin-bottom: 10px;
+    font-family: Serif;
+    font-size: medium;
+
+}
+.p-tags{
+    color: navy;
+    font-weight: bolder;
+    font-size: large;
+    margin-right: 3px;
+}

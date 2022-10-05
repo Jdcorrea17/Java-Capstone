@@ -6,81 +6,101 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../../reactfrontend/src/Css/home.css" type="text/css">
 </head>
 <body>
-<h1>HomeFinder</h1>
-<div>
-    <h2 class="form-home">Add New Houses</h2>
-    <form>
-        <div>
-            <input placeholder="Address"></input>
+    <link rel="stylesheet" href="./css/home.css" type="text/css">
+    <div class="logo">
+        <h1 class="h1-logo">Real Estate Engineering</h1>
+        <div class="img-logo">
         </div>
-        <div>
-            <input placeholder="Bedrooms"></input>
-        </div>
-        <div>
-            <input placeholder="Bathrooms"></input>
-        </div>
-        <div>
-            <input placeholder="SquareFt"></input>
-        </div>
-        <div>
-            <input placeholder="Price"></input>
-        </div>
-        <div>
-            <input placeholder="Availability"></input>
-        </div>
-        <div class="form-button">
-            <button type="submit">Add To Page</button>
-        </div>
-    </form>
-</div>
-<br>
+    </div>
 
-<h2>Available</h2>
-<div>
-<img src="images/house1.jpeg" alt="Image Not Found"></img>
-</div>
-<br>
-
-<h2>Processing</h2>
-<div>
-
-</div>
-<br>
-
-<h2>Sold</h2>
-<div>
-
-</div>
-<br>
-
-<h2>Mortgage Calculator</h2>
-<div>
-    <form>
-        <div>
-            <label>Home Value:</label>
-            <input placeholder="Principle">
+    <div class="pages">
+        <div class="register-but">
+            <a href="register.html" class="register-but">Register</a>
+            <br/>
         </div>
-        <div>
-            <label>Interest Rate:</label>
-            <input placeholder="Interest">
+        <div class="login-but">
+            <a href="login.html" class="login-but">Login</a>
+            <br/>
         </div>
+    </div>
+    <br>
 
-        <div>
-            <label>Loan Term:</label>
-            <input placeholder="Mortgage">
+    <div class="form-home">
+        <h2>Add New Houses</h2>
+        <form>
+            <div class="flex-form">
+                <div class="input-home">
+                    <label for="form-img" class="p-tags">Image URl:</label>
+                    <input placeholder="ImageURL(text)" type="String" id="form-img" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-address" class="p-tags">Address:</label>
+                    <input placeholder="Address(text)" type="String" id="form-address"
+                    class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-room" class="p-tags">Bedrooms:</label>
+                    <input placeholder="Bedrooms(int)" type="int" id="form-room" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-bath" class="p-tags">Bathrooms:</label>
+                    <input placeholder="Bathrooms(int)" type="int" id="form-bath" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-sqft" class="p-tags">SquareFt:</label>
+                    <input placeholder="SquareFt(text)" type="String" id="form-sqft" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-price" class="p-tags">Home Value:</label>
+                    <input placeholder="Price(double)" type="double" id="form-price" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-available" class="p-tags">Availability:</label>
+                    <input placeholder="Availability(double)" type="boolean" id="form-available"
+                    class="form-input"></input>
+                </div>
+            </div>
+            <div class="sub-button">
+                <button type="submit" class="sub-button">Add To Page</button>
+            </div>
+        </form>
+    </div>
+    <br>
+
+    <div class="available-home">
+        <h2 class="ava-color">Available</h2>
+        <div class="home-container">
+            <section id="home-body"></section>
         </div>
-        <div>
-            <button type="button">Calculate</button>
-        </div>
-    </form>
-</div>
-<!--<div align="center"><p><a href="https://www.mortgagecalculator.org" target="_blank"><img src="https://www.mortgagecalculator.org/images/mortgage-calculator-logo2.png" alt="MortgageCalculator.org" height="19" width="200" border="0"></a><br /><iframe src="https://www.mortgagecalculator.org/free-tools/calculator/" frameborder="0" width="260px" height="270" scrolling="no"></iframe><br /><a href="https://www.mortgagecalculator.org/free-tools/" target="_blank" style="text-decoration:none" ><font size="1" color="#000000">Free Mortgage Calculators</font></a></p></div>-->
+    </div>
+    <br>
 
+    <div class="cal-input">
+        <h2 class="cal-color">Mortgage Calculator</h2>
+        <form>
+            <div>
+                <label class="p-tags">Home Value:</label>
+                <input placeholder="Principle" type="text" id="cal-value" class="form-input">
+            </div>
+            <div>
+                <label class="p-tags">Interest Rate:</label>
+                <input placeholder="Interest" type="text" id="cal-int" class="form-input">
+            </div>
 
-<script src="../../../reactfrontend/src/javascript/home.js" type="application/javascript"></script>
+            <div>
+                <label class="p-tags">Loan Term:</label>
+                <input placeholder="Mortgage" type="text" id="cal-loan" class="form-input">
+            </div>
+
+            <div class="sub-button">
+                <button type="button" class="sub-button">Calculate</button>
+            </div>
+        </form>
+    </div>
+
+<script src="./javascript/home.js" type="application/javascript"></script>
 
 </body>
 </html>
