@@ -13,6 +13,7 @@
     width: 400px;
     font-family: Serif;
     text-align: center;
+    margin: 0;
 }
 
 h2{
@@ -28,7 +29,7 @@ h2{
     align-items: center;
     width: auto;
     border-style: solid;
-    height: 210px;
+    height: 220px;
 }
 .form-button{
     text-align: center;
@@ -167,4 +168,54 @@ h2{
 }
 .add-to{
     text-align: center;
+}
+#home-card{
+    border-style: solid;
+    border-color: blue;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px;
+    justify-content: space-around;
+}
+.img-div{
+    justify-content: center;
+
+}
+.img-card{
+    margin-top: 10px;
+    width: 240px;
+    height: 160px
+}
+.card-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.functions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.delete{
+    /*border-style: solid;*/
+    width: 80px;
+    margin: auto;
+    font-size: large;
+    font-weight: bolder;
+    color: navy;
+    font-family: Serif;
+
+}
+.edit{
+    /*border-style: solid;*/
+    width: 164px;
+    margin: auto;
+    font-size: large;
+    font-weight: bolder;
+    color: navy;
+    font-family: Serif;
+    justify-content: center;
 }

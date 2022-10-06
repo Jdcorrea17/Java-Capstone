@@ -15,14 +15,14 @@
         <div class="img-logo">
         </div>
     </div>
-
+    <br>
     <div class="pages">
         <div class="register-but">
             <a href="register.html" class="register-but">Register</a>
             <br/>
         </div>
         <div class="login-but">
-            <a href="login.html" class="login-but">Login</a>
+            <a href="login.html" class="login-but">Logout</a>
             <br/>
         </div>
     </div>
@@ -81,7 +81,7 @@
 
     <div class="cal-input">
         <h2 class="cal-color">Mortgage Calculator</h2>
-        <form>
+        <form id="calculate">
             <div>
                 <label class="p-tags">Home Value:</label>
                 <input placeholder="Principle" type="text" id="cal-value" class="form-input">
@@ -97,10 +97,19 @@
             </div>
 
             <div>
-                <button type="button" class="sub-button">Calculate</button>
+                <button type="submit" class="sub-button">Calculate</button>
             </div>
         </form>
+        <br>
+        <div class="Mortgage-total">
+            <div id="calculator-container">
+                <section id="cal-body"></section>
+                <textarea id="cal-input"> </textarea>
+            </div>
+        </div>
     </div>
+
+
 
 <script src="javascript/home.js" type="application/javascript"></script>
 

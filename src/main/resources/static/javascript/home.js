@@ -1,12 +1,15 @@
 const value = document.getElementById('cal-value')
 const interest = document.getElementById('cal-int')
 const loan = document.getElementById('cal-loan')
+const calculatorContainer = document.getElementById('calculator-container')
+const calculateForm = document.getElementById('calculate')
+
 
 let img = document.getElementById('form-img')
 let address = document.getElementById('form-address')
 let bedroom = document.getElementById('form-room')
 let bathroom = document.getElementById('form-bath')
-let square_ft = document.getElementById('form-sqft')
+let squareFt = document.getElementById('form-sqft')
 let price = document.getElementById('form-price')
 let availability = document.getElementById('form-available')
 let submitForm = document.getElementById('submit-form')
@@ -23,6 +26,50 @@ const headers = {
 
 const baseUrl = 'http://localhost:8080/homes/'
 
+async function calculate(e) {
+    e.preventDefault()
+
+    let obj = {
+        interest: interest.value,
+        principal: value.value,
+        mortgage: loan.value
+        // interest: document.getElementById("cal-int").value,
+        // mortgage: document.getElementById("cal-loan").value,
+        // principal: document.getElementById("cal-value").value,
+        // total: document.getElementById("").value
+    }
+    const response = await fetch(`${baseUrl}calculator/mortgage`, {
+        method: "POST",
+        body: JSON.stringify(obj),
+        headers: headers
+    })
+        .catch(err => console.error(err.message))
+    if (response.status == 200) {
+        console.log(response)
+        createMortgageCard(response)
+    }
+}
+
+const createMortgageCard = (array) => {
+    calculatorContainer.innerHTML = ''
+    console.log(array)
+    array.forEach(obj => {
+        console.log(obj)
+        let CalculatorCard = document.createElement("div")
+        CalculatorCard.classList.add("m-1")
+        CalculatorCard.innerHTML = `
+        <div>
+        <div>
+            <p class="calculate-total">Equation:(${obj.principal} * ${obj.interest}) % (1.0 - (1.0 + ${obj.interest}, - ${obj.mortgage} * 12 = ${obj.total}</p>
+        </div>
+            
+        
+        </div>
+        
+        `
+        calculatorContainer.append(CalculatorCard);
+    })
+}
 
 const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,7 +79,7 @@ const handleSubmit = async (e) => {
         address: address.value,
         bedrooms: bedroom.value,
         bathrooms: bathroom.value,
-        square_ft: square_ft.value,
+        squareFt: squareFt.value,
         price: price.value,
         availability: availability.value
     }
@@ -90,7 +137,7 @@ const handleSubmit = async (e) => {
             address: address.value,
             bedrooms: bedroom.value,
             bathrooms: bathroom.value,
-            square_ft: square_ft.value,
+            squareFt: squareFt.value,
             price: price.value,
             availability: availability.value
         }
@@ -113,40 +160,49 @@ const handleSubmit = async (e) => {
             let homeCard = document.createElement("div")
             homeCard.classList.add("m-2")
             homeCard.innerHTML = `
-                        <div className="home-card">
-                        <div className="img-div">
-                        <img src="${obj.img}" class="img-card"></img>
-                        </div>
-                        <div className="address-price">
-                        <div className="address">
-                        <p className="add">Address:${obj.address}</p>
-                        </div>
-                        <div className="price">
-                        <p className="value">Price:$ ${obj.price}</p>
-                        </div>
-                        </div>
-    
-                        <div className="bath-rooms">
-                        <div className="rooms">
-                        <p className="bedrooms">${obj.bedrooms}</p>
-                        </div>
-                        <div className="baths">
-                        <p className="bathrooms">${obj.bathrooms}</p>
-                        </div>
-                        </div>
-                        <div className="sq-ava">
-                        <div className="ft">
-                        <p className="sqft">${obj.square_ft}</p>
-                        </div>
-                        <div className="ava">
-                        <p className="true">${obj.availability}</p>
-                        </div>
-                        </div>
-                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
-                        <button onclick="handleHomeEdit(${obj.id})" type="button" class="btn btn-primary"
-                        data-bs-toggle="modal" data-bs-target="#home-edit-modal">
-                        Edit
-                        </button>
+                        <div id="home-card">
+                            <div class="card-flex">
+                                <div class="img-div">
+                                <img src="${obj.img}" class="img-card"></img>
+                                </div>
+                                <div class="address-price">
+                                    <div class="address">
+                                    <p class="add">Address: ${obj.address}</p>
+                                    </div>
+                                    <div class="price">
+                                    <p class="value">Price: $${obj.price}</p>
+                                    </div>
+                                </div>
+            
+                                <div class="bath-rooms">
+                                    <div class="rooms">
+                                        <p class="bedrooms">bedrooms: ${obj.bedrooms}</p>
+                                    </div>
+                                    <div class="baths">
+                                        <p class="bathrooms">bathrooms: ${obj.bathrooms}</p>
+                                    </div>
+                                </div>
+                                <div class="sq-ava">
+                                    <div class="ft">
+                                        <p class="sqft">SquareFt: ${obj.squareFt}</p>
+                                    </div>
+                                    <div class="ava">
+                                        <p class="true">Avaliable: ${obj.availability}</p>
+                                    </div>
+                                </div>
+                                </div>
+                            
+                            <div class="functions">
+                                <div class="delete">
+                                    <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
+                                </div>
+                                <div class="edit">
+                                    <button onclick="getHomeById(${obj.id})" type="button" class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#home-edit-modal">
+                                    Edit
+                                </button>
+                                </div>
+                            </div>
                         </div>
                         `
             homeContainer.append(homeCard);
@@ -163,13 +219,14 @@ function handleLogout(){
 const populateModal = (obj) => {
     homeBody.innerHTML = ''
     homeBody.innerHTML = obj.body
-    updateHomeBtn.setAttribute('data-home-id', obj.id);
+    // updateHomeBtn.setAttribute('data-home-id', obj.id);
 }
-getHome(userId);
+// getHome(userId);
 
+calculateForm.addEventListener("submit", calculate)
 submitForm.addEventListener("submit", handleSubmit)
 
-updateHomeBtn.addEventListener("click", (e)=>{
-    let homeId = e.target.getAttribute('data-home-id')
-    handleHomeEdit(homeId);
-})
+// updateHomeBtn.addEventListener("click", (e)=>{
+//     let homeId = e.target.getAttribute('data-home-id')
+//     handleHomeEdit(homeId);
+// })

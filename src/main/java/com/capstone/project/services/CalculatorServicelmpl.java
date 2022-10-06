@@ -22,7 +22,7 @@ public class CalculatorServicelmpl implements CalculatorService{
     @Transactional
     public void addCalculator(CalculatorDto calculatorDto){
         Calculator calculator = new Calculator(calculatorDto);
-        double total = (calculator.getPrincipal() * calculator.getInterest()) / (1 - Math.pow(1 + calculator.getInterest(), -calculator.getMortgage()));
+        double total = (calculator.getPrincipal() * calculator.getInterest()) / (1 - Math.pow(1 + calculator.getInterest(), - calculator.getMortgage()));
         total = Math.round(total * 100) / 100;
         calculator.setTotal(total);
         calculatorRepository.saveAndFlush(calculator);
