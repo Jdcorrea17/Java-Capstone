@@ -60,7 +60,7 @@ const createMortgageCard = (array) => {
         CalculatorCard.innerHTML = `
         <div>
         <div>
-            <p class="calculate-total">Equation:(${obj.principal} * ${obj.interest}) % (1.0 - (1.0 + ${obj.interest}, - ${obj.mortgage} * 12 = ${obj.total}</p>
+            <p class="calculate-total">Equation:(${obj.principal} * ${obj.interest}) % (1.0 - (1.0 + ${obj.interest}, - ${obj.mortgage} = </p>
         </div>
             
         
@@ -160,7 +160,7 @@ const handleSubmit = async (e) => {
             let homeCard = document.createElement("div")
             homeCard.classList.add("m-2")
             homeCard.innerHTML = `
-                        <div id="home-card">
+                        <div class="home-card">
                             <div class="card-flex">
                                 <div class="img-div">
                                 <img src="${obj.img}" class="img-card"></img>
@@ -176,10 +176,10 @@ const handleSubmit = async (e) => {
             
                                 <div class="bath-rooms">
                                     <div class="rooms">
-                                        <p class="bedrooms">bedrooms: ${obj.bedrooms}</p>
+                                        <p class="bedrooms">Bedrooms: ${obj.bedrooms}</p>
                                     </div>
                                     <div class="baths">
-                                        <p class="bathrooms">bathrooms: ${obj.bathrooms}</p>
+                                        <p class="bathrooms">Bathrooms: ${obj.bathrooms}</p>
                                     </div>
                                 </div>
                                 <div class="sq-ava">

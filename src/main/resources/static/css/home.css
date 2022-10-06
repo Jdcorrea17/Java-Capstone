@@ -1,5 +1,6 @@
 *{
     background-color: lightgrey;
+    
 }
 .logo{
     margin: 0px;
@@ -30,13 +31,18 @@ h2{
     width: auto;
     border-style: solid;
     height: 260px;
+    font-family: Serif;
+
 }
 .form-button{
     text-align: center;
     margin-top: 10px;
+    font-family: Serif;
+
 }
 .available-home{
     border-style: solid;
+
 }
 .input-home{
     height: auto;
@@ -44,6 +50,8 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: Serif;
+
 }
 .house1{
     display: flex;
@@ -51,6 +59,8 @@ h2{
     border-style: solid;
     height: auto;
     width: 300px;
+    font-family: Serif;
+
 }
 .house1-img{
     height: 200px;
@@ -64,6 +74,8 @@ h2{
     flex-direction: row;
     margin: 0;
     border-style: solid;
+    font-family: Serif;
+
 }
 .icon{
     height: 20px;
@@ -75,6 +87,8 @@ h2{
     text-align: center;
     border-style: solid;
     height: 400px;
+    font-family: Serif;
+
 }
 /*.cal-button{*/
 /*    height: 30px;*/
@@ -101,21 +115,18 @@ h2{
     justify-content: center;
 }
 .ava-color{
-    color: darkgreen;
-    font-family: Serif;
-
-}
-.sold-color{
-    color: darkred;
+    color: navy;
     font-family: Serif;
 
 }
 .cal-color{
-    color: darkorange;
+    color: navy;
     font-family: Serif;
 }
 .input-home{
     width: 270px;
+    font-family: Serif;
+
 }
 .flex-form{
     display: flex;
@@ -124,6 +135,8 @@ h2{
     font-family: Serif;
     margin: 0px;
     justify-content: center;
+    font-family: Serif;
+
 }
 .p-tags{
     color: Navy;
@@ -150,17 +163,6 @@ h2{
     font-weight: bolder;
     font-family: Serif;
     text-align: center;
-    justify-content: center;
-    align-content: center;
-    justify-self: center;
-    justify-items: center;
-    text-align-all: center;
-    align-self: center;
-    align-items: center;
-
-}
-.sold-home{
-    border-style: solid;
 }
 .pages{
     display: flex;
@@ -170,22 +172,25 @@ h2{
     text-align: center;
     height: auto;
 }
-#home-card{
+.home-card{
     border-style: solid;
-    border-color: blue;
+    border-color: black;
     width: 250px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0px;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 400px;
+    font-family: Serif;
+    margin-bottom: 20px;
 }
 .img-div{
     justify-content: center;
 
 }
 .img-card{
-    margin-top: 10px;
+    margin-top: 5px;
     width: 240px;
     height: 160px
 }
@@ -199,6 +204,11 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 #delete{
     /*border-style: solid;*/
@@ -208,20 +218,50 @@ h2{
     font-weight: bolder;
     color: navy;
     font-family: Serif;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 #edit{
     /*border-style: solid;*/
-    width: 164px;
+    width: 80px;
     margin: auto;
     font-size: large;
     font-weight: bolder;
     color: navy;
     font-family: Serif;
     justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .functions{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
+}
+#home-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.address-price {
+    text-align: center;
+    height: 90px;
+    display: flex;
+    /* flex-direction: column-reverse; */
+}
+.bath-rooms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+    width: 200px;
+}
+.sq-ava{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 230px;
 }
