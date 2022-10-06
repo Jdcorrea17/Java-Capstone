@@ -193,11 +193,11 @@ const handleSubmit = async (e) => {
                                 </div>
                             
                             <div class="functions">
-                                <div class="delete">
-                                    <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
+                                <div >
+                                    <button id="delete" class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
                                 </div>
-                                <div class="edit">
-                                    <button onclick="getHomeById(${obj.id})" type="button" class="btn btn-primary"
+                                <div>
+                                    <button onclick="getHomeById(${obj.id})" type="button" id="edit" class="btn btn-primary"
                                     data-bs-toggle="modal" data-bs-target="#home-edit-modal">
                                     Edit
                                 </button>
@@ -221,7 +221,7 @@ const populateModal = (obj) => {
     homeBody.innerHTML = obj.body
     // updateHomeBtn.setAttribute('data-home-id', obj.id);
 }
-// getHome(userId);
+getHome(userId);
 
 calculateForm.addEventListener("submit", calculate)
 submitForm.addEventListener("submit", handleSubmit)
