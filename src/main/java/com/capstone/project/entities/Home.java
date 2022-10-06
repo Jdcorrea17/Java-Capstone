@@ -31,9 +31,9 @@ public class Home {
     @Column
     private double price;
     @Column
-    private boolean availability;
+    private Boolean availability;
 
-    Home(String img, String address, int bedrooms, int bathrooms, String squareFt, double price, boolean availability) {
+    Home(String img, String address, int bedrooms, int bathrooms, String squareFt, double price, Boolean availability) {
         this.img = img;
         this.address = address;
         this.bedrooms = bedrooms;
@@ -105,9 +105,11 @@ public class Home {
         if(homeDto.getSquareFt() != null){
             this.squareFt = homeDto.getSquareFt();
         }
+        
             this.price = homeDto.getPrice();
             this.availability = homeDto.isAvailability();
     }
+
     @ManyToOne
     @JsonBackReference
     private User user;

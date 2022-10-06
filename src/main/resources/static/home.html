@@ -55,11 +55,11 @@
                 </div>
                 <div class="input-home">
                     <label for="form-price" class="p-tags">Home Value:</label>
-                    <input placeholder="Price(double)" type="double" id="form-price" class="form-input">
+                    <input placeholder="Price(text)" type="String" id="form-price" class="form-input">
                 </div>
                 <div class="input-home">
                     <label for="form-available" class="p-tags">Availability:</label>
-                    <input placeholder="Availability(double)" type="boolean" id="form-available"
+                    <input placeholder="Availability(text)" type="String" id="form-available"
                     class="form-input">
                 </div>
             </div>
@@ -79,7 +79,46 @@
         </div>
     </div>
     <br>
-    <div></div>
+    <div id="edit-form">
+        <form id="submit-form">
+            <div class="flex-form">
+                <div class="input-home">
+                    <label for="form-img" class="p-tags">Image URl:</label>
+                    <input placeholder="ImageURL(text)" type="String" id="edit-img" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-address" class="p-tags">Address:</label>
+                    <input placeholder="Address(text)" type="String" id="edit-address"
+                    class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-room" class="p-tags">Bedrooms:</label>
+                    <input placeholder="Bedrooms(int)" type="int" id="edit-room" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-bath" class="p-tags">Bathrooms:</label>
+                    <input placeholder="Bathrooms(int)" type="int" id="edit-bath" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-sqft" class="p-tags">SquareFt:</label>
+                    <input placeholder="SquareFt(text)" type="String" id="edit-sqft" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-price" class="p-tags">Home Value:</label>
+                    <input placeholder="Price(text)" type="String" id="edit-price" class="form-input">
+                </div>
+                <div class="input-home">
+                    <label for="form-available" class="p-tags">Availability:</label>
+                    <input placeholder="Availability(text)" type="String" id="edit-available"
+                    class="form-input">
+                </div>
+            </div>
+            <div class="add-to">
+                <button type="submit" class="sub-button" id="edit-home-but">Update</button>
+            </div>
+        </form>
+
+    </div>
 
     <br>
     <div class="cal-input">
@@ -107,7 +146,7 @@
         <div class="Mortgage-total">
             <div id="calculator-container">
                 <section id="cal-body"></section>
-                <textarea id="cal-input"> </textarea>
+                <textarea label="div-card" id="cal-input"> </textarea>
             </div>
         </div>
     </div>

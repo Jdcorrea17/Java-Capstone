@@ -20,17 +20,18 @@ public class CalculatorServicelmpl implements CalculatorService{
 
     @Override
     @Transactional
-    public void addCalculator(CalculatorDto calculatorDto){
+    public Calculator addCalculator(CalculatorDto calculatorDto){
         Calculator calculator = new Calculator(calculatorDto);
-       double total = (calculator.getPrincipal() * calculator.getInterest()) / (1 - Math.pow(1 + calculator.getInterest(), - calculator.getMortgage()));
+    //    double total = (calculator.getPrincipal() * calculator.getInterest()) / (1 - Math.pow(1 + calculator.getInterest(), - calculator.getMortgage()));
         double monthlyInterest = calculator.getInterest() / 100 / 12;
         double mathPower = Math.pow(1 + monthlyInterest, calculator.getMortgage());
         double monthlyPayment = calculator.getPrincipal() * (monthlyInterest * mathPower / (mathPower - 1));
         monthlyPayment = Math.round(monthlyPayment * 100) / 100;
         calculator.setTotal(monthlyPayment);
         calculatorRepository.saveAndFlush(calculator);
+        return calculator;
     }
-    
+
     // @Override
     // @Transactional
     // public void addCalculator(CalculatorDto calculatorDto){

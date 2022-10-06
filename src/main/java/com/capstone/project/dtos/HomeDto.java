@@ -40,7 +40,11 @@ public class HomeDto implements Serializable {
             this.squareFt = home.getSquareFt();
         }
 
+    
             this.price = home.getPrice();
-            this.availability = home.isAvailability();
+        
+            this.availability = home.getAvailability();
+        
     }
 }
+
