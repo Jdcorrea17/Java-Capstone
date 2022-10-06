@@ -63,7 +63,7 @@ const createMortgageCard = (array) => {
             CalculatorCard.innerHTML = `
             <div>
             <div>
-                <p class="calculate-total">Equation:(${array.principal} * ${array.interest}) % (1.0 - (1.0 + ${array.interest}, - ${array.mortgage} * 12 = ${array.total}</p>
+                <p class="calculate-total">Equation:(${array.principal} * ${array.interest}) % (1.0 - (1.0 + ${array.interest}, - ${array.mortgage}) = Estemated Monthly Total is: $${array.total}</p>
             </div>
 
 
@@ -73,50 +73,6 @@ const createMortgageCard = (array) => {
             calculatorContainer.append(CalculatorCard);
 }
 
-// async function calculate(e) {
-//     e.preventDefault()
-
-//     let obj = {
-//         interest: interest.value,
-//         principal: value.value,
-//         mortgage: loan.value
-//         // interest: document.getElementById("cal-int").value,
-//         // mortgage: document.getElementById("cal-loan").value,
-//         // principal: document.getElementById("cal-value").value,
-//         // total: document.getElementById("").value
-//     }
-//     const response = await fetch(`${baseUrl}calculator/mortgage`, {
-//         method: "POST",
-//         body: JSON.stringify(obj),
-//         headers: headers
-//     })
-//         .catch(err => console.error(err.message))
-//     if (response.status == 200) {
-//         console.log(response)
-//         createMortgageCard(response)
-//     }
-// }
-
-// const createMortgageCard = (array) => {
-//     calculatorContainer.innerHTML = ''
-//     console.log(array)
-//     array.forEach(obj => {
-//         console.log(obj)
-//         let CalculatorCard = document.createElement("div")
-//         CalculatorCard.classList.add("m-1")
-//         CalculatorCard.innerHTML = `
-//         <div>
-//         <div>
-//             <p class="calculate-total">Equation:(${obj.principal} * ${obj.interest}) % (1.0 - (1.0 + ${obj.interest}, - ${obj.mortgage} = </p>
-//         </div>
-            
-        
-//         </div>
-        
-//         `
-//         calculatorContainer.append(CalculatorCard);
-//     })
-// }
 
 const handleSubmit = async (e) => {
     e.preventDefault()
@@ -179,14 +135,14 @@ const handleSubmit = async (e) => {
     async function handleHomeEdit(homeId){
         let bodyObj = {
             id: homeId,
-            body: homeBody.value,
-            img: img.value,
-            address: address.value,
-            bedrooms: bedroom.value,
-            bathrooms: bathroom.value,
-            squareFt: squareFt.value,
-            price: price.value,
-            availability: availability.value
+//            body: homeBody.value,
+            img: document.getElementById('edit-img').value,
+            address: document.getElementById('edit-address').value,
+            bedrooms: document.getElementById('edit-room').value,
+            bathrooms: document.getElementById('edit-bath').value,
+            squareFt: document.getElementById('edit-sqft').value,
+            price: document.getElementById('edit-price').value,
+            availability: document.getElementById('edit-available').value
         }
 
         await fetch(baseUrl, {
@@ -198,6 +154,29 @@ const handleSubmit = async (e) => {
 
         return getHome(userId)
     }
+
+    // async function handleHomeEdit(homeId){
+    //     let bodyObj = {
+    //         id: homeId,
+    //         body: homeBody.value,
+    //         img: img.value,
+    //         address: address.value,
+    //         bedrooms: bedroom.value,
+    //         bathrooms: bathroom.value,
+    //         squareFt: squareFt.value,
+    //         price: price.value,
+    //         availability: availability.value
+    //     }
+
+    //     await fetch(baseUrl, {
+    //         method: "PUT",
+    //         body: JSON.stringify(bodyObj),
+    //         headers: headers
+    //     })
+    //         .catch(err => console.error(err))
+
+    //     return getHome(userId)
+    // }
 
     const createHomeCards = (array) => {
         homeContainer.innerHTML = ''
@@ -270,22 +249,36 @@ const populateModal = (obj) => {
     document.getElementById('edit-room').value = obj.bedrooms,
     document.getElementById('edit-sqft').value = obj.squareFt,
     document.getElementById('edit-available').value = obj.availability,
-    document.getElementById('edit-price').value = obj.price,
+    document.getElementById('edit-price').value = obj.price
 
-
-
+    updateHomeBtn.setAttribute('data-home-id', obj.id);
+}
     // homeBody.innerHTML = ''
     // homeBody.innerHTML = obj.body, obj.price, obj.img, obj.address, obj.bathrooms, obj.bathrooms, obj.squareFt, obj.availability
-updateHomeBtn.setAttribute('data-home-id', obj.id);
 
-}
+
+
+
 getHome(userId);
 
-editUpdate.addEventListener("submit", handleHomeEdit)
+updateHomeBtn.addEventListener("click", (e)=>{
+    e.preventDefault()
+    let homeId = e.target.getAttribute('data-home-id')
+    handleHomeEdit(homeId);
+    document.getElementById('edit-img').value = "";
+    document.getElementById('edit-address').value = "";
+    document.getElementById('edit-bath').value = "";
+    document.getElementById('edit-room').value = "";
+    document.getElementById('edit-sqft').value = "";
+    document.getElementById('edit-available').value = "";
+    document.getElementById('edit-price').value = "";
+})
+
+// updateHomeBtn.addEventListener("submit", handleHomeEdit)
 calculateForm.addEventListener("submit", calculate)
 submitForm.addEventListener("submit", handleSubmit)
 
-updateHomeBtn.addEventListener("click", (e)=>{
-    let homeId = e.target.getAttribute('data-home-id')
-    handleHomeEdit(homeId);
-})
+// updateHomeBtn.addEventListener("click", (e)=>{
+//     let homeId = e.target.getAttribute('data-home-id')
+//     handleHomeEdit(homeId);
+// })

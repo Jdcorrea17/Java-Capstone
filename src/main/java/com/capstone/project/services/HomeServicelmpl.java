@@ -44,9 +44,25 @@ public class HomeServicelmpl implements HomeService {
     public void updateHomeById(HomeDto homeDto){
         Optional<Home> homeOptional = homeRepository.findById(homeDto.getId());
         homeOptional.ifPresent(home -> {
+            home.setAddress(homeDto.getAddress());
+            home.setImg(homeDto.getImg());
+            home.setImg(homeDto.getImg());
+            home.setBedrooms(homeDto.getBedrooms());
+            home.setBathrooms(homeDto.getBathrooms());
+            home.setSquareFt(homeDto.getSquareFt());
+            home.setPrice(homeDto.getPrice());
             homeRepository.saveAndFlush(home);
         });
     }
+    
+    // @Override
+    // @Transactional
+    // public void updateHomeById(HomeDto homeDto){
+    //     Optional<Home> homeOptional = homeRepository.findById(homeDto.getId());
+    //     homeOptional.ifPresent(home -> {
+    //         homeRepository.saveAndFlush(home);
+    //     });
+    // }
 
     @Override
     public List<HomeDto> getAllHomeByUserId(Long userId){

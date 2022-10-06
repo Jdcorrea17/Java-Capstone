@@ -250,7 +250,7 @@ h2{
     text-align: center;
     height: 90px;
     display: flex;
-    /* flex-direction: column-reverse; */
+    flex-direction: column-reverse;
 }
 .bath-rooms{
     display: flex;
@@ -258,10 +258,18 @@ h2{
     justify-content: space-between;
     height: 30px;
     width: 200px;
+    margin: 0;
 }
 .sq-ava{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 230px;
+}
+#edit-form{
+    border-style: solid;
+    height: 250px;
+}
+.value{
+    margin: 0;
 }
