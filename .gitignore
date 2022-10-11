@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /JavaCapstone/src/main/resources/application.properties
+target
 
 ### STS ###
 .apt_generated

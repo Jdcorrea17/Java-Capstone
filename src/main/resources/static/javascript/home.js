@@ -142,7 +142,8 @@ const handleSubmit = async (e) => {
             bathrooms: document.getElementById('edit-bath').value,
             squareFt: document.getElementById('edit-sqft').value,
             price: document.getElementById('edit-price').value,
-            availability: document.getElementById('edit-available').value
+            availability: availability.value
+            // availability: document.getElementById('edit-available').value
         }
 
         await fetch(baseUrl, {

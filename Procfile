@@ -1,1 +1,1 @@
-web: npm start
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.capstone.project
